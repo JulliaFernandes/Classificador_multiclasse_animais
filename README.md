@@ -1,61 +1,56 @@
-# Classificação de Animais com Data Augmentation e Random Forest 🐾🌲
+# 🐋🦋🐶 Comparação de Técnicas de Visão Computacional na Classificação de Animais
 
-Este repositório contém o código e os experimentos realizados para o seminário da disciplina de **Visão Computacional**, com o tema:  
-**“Uso de Data Augmentation e Random Forest na Classificação de Animais”**.
+Este repositório ao trabalho desenvolvido como projeto final da disciplina de *Visão Computacional* do curso de Engenharia da Computação (CEFET-MG). O estudo teve como propósito aplicar técnicas de redes neurais convolucionais e algoritmos de aprendizado supervisionado para classificar imagens de animais, comparando o desempenho entre a arquitetura *MobileNetV2* e o modelo *Random Forest*.
 
-## 📚 Objetivo do Projeto
+## ⚙️ Funcionalidades do sistema
 
-O principal objetivo foi aplicar técnicas de **aumento de dados (data augmentation)** em um conjunto de imagens de animais e utilizar o algoritmo de **Random Forest** para realizar a **classificação automática** dessas imagens.
+- Utilização da base de dados com imagens de três espécies animais: *baleia, **borboleta* e *cachorro*.
+- Aplicação de técnicas de *pré-processamento* e *aumento de dados* (data augmentation) para aumentar a capacidade generalização dos modelos.
+- Treinamento de um modelo baseado em *Random Forest* com extração de características.
+- Treinamento de uma *CNN MobileNetV2* com pesos pré-treinados via Transfer Learning.
+- Avaliação dos modelos com uso das métricas: *acurácia, **precisão, **revocação (recall), **F1-score, **matriz de confusão* e *curva ROC*.
+- Comparação dos resultados obtidos para análise de desempenho entre as abordagens.
 
-## 🧠 Tecnologias e Bibliotecas Utilizadas
-
-- Python 3.x  
-- OpenCV (`cv2`)
-- NumPy
-- scikit-learn (`sklearn`)
-- Matplotlib (para visualização)
-- OS, Glob (para manipulação de arquivos e diretórios)
-
-## 🔬 Metodologia
-
-1. **Coleta de Dados**  
-   Imagens de diferentes classes de animais (cães, baleias, aguias).
-
-2. **Pré-processamento e Aumento de Dados**  
-   Aplicação de técnicas como:
-   - Rotação
-   - Espelhamento (flip horizontal/vertical)
-   - Redimensionamento
-   - Ruído e ajustes de brilho
-
-3. **Treinamento do Modelo**  
-   Uso do algoritmo de **Random Forest** da biblioteca `sklearn` para treinar o classificador.
-
-4. **Avaliação**  
-   Testes com dados não vistos e avaliação da acurácia do modelo.
 
 ## 📁 Estrutura do Repositório
 
-```
-Classificacao_De_Animais/
-├── animais/                 # Imagens divididas por classes
-│   ├── aguia/               # Imagens originais
-│   └── baleia/              # Imagens originais
-│   └── cachorro/            # Imagens originais
-│   └── treino/              # Imagens originais de treino
-│   └── validacao/           # Imagens originais de validação
-├── aumentadas/              # Imagens de treino pos aplicação do Data Aumentation
-│   ├── treino/              # Imagens de treino aumentadas
-├── imgsAmigos/              # Imagem reais de animais para testar o modelo.
-├── environment.yml          # Bibliotecas necessárias
-├── main.ipynb               # Scripts Python (pré-processamento, treino, avaliação)
-└── melhor_modelo.h5         # Melhor modelo obtido
-```
+bash
+animal-classification/
+├── animais/                        # Conjuntos de imagens originais por espécie
+│   ├── ButterflyDataset/
+│   ├── DogDataset/
+│   └── WhalesDataset/
+├── dataset_aumentado/             # Imagens com data augmentation
+│   ├── teste/
+│   ├── treino/
+│   └── validacao/
+├── dataset_organizado/            # Dataset organizado sem aumento de dados
+│   ├── teste/
+│   ├── treino/
+│   └── validacao/
+├── environment.yml                # Arquivo para criação de ambiente Conda
+├── main.ipynb                     # Notebook principal com execução geral do projeto
+├── random_forest_melhor_modelo.joblib  # Modelo Random Forest salvo (melhor versão)
+└── README.md                      
 
-## 📊 Resultados
 
-- O uso de **Data Augmentation** contribuiu para o aumento da base de dados e melhor generalização do modelo.
-- A **Random Forest** apresentou bom desempenho na classificação, com precisão satisfatória mesmo com um número limitado de dados originais.
+## 🛠️ Tecnologias e Ferramentas
+
+### 🧰 Tecnologias utilizadas
+
+- *Python 3.10+* — Linguagem principal do projeto.
+- *Jupyter Notebook* — Ambiente interativo utilizado para desenvolvimento e apresentação dos experimentos.
+- **[TensorFlow](https://www.tensorflow.org/)** e **[Keras](https://keras.io/)** — Frameworks usados para construção e treinamento da CNN MobileNetV2.
+- **[OpenCV](https://opencv.org/)** — Utilizado para manipulação e processamento das imagens.
+- **[scikit-learn](https://scikit-learn.org/)** — Ferramenta para treinamento do modelo Random Forest, extração de métricas e validação cruzada.
+- *NumPy / Matplotlib* — Bibliotecas para manipulação de dados numéricos e visualização gráfica.
+
+### 🚀 Como usar
+
+1. *Clone este repositório*:
+   ```bash
+   git clone https://github.com/seu-usuario/animal-classification.git
+   cd animal-classification
 
 ## 🎓 Informações Acadêmicas
 
@@ -65,26 +60,16 @@ Classificacao_De_Animais/
   - Anna Laura Moura Santana
   - Jullia Fernandes Felizardo
 
-## 🚀 Como Executar
+## 👩‍💻 Autoras
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/JulliaFernandes/Classificacao_De_Animais.git
-   cd Classificacao_De_Animais
-   ```
+> *Anna Laura Moura*  
+> [nalauramoura@gmail.com](mailto:nalauramoura@gmail.com)
 
-2. Crie o ambiente Conda a partir do arquivo `environment.yml`:
-   ```bash
-   conda env create -f environment.yml
-   ```
+> *Jullia Fernandes Felizardo*  
+> [julliacefet@gmail.com](mailto:julliacefet@gmail.com)
 
-3. Ative o ambiente:
-   ```bash
-   conda activate classificacao_animais
-   ```
-
-4. Execute os scripts ou abra os notebooks na pasta `/notebooks`.
 
 ## 📝 Licença
 
 Este projeto foi desenvolvido exclusivamente para fins acadêmicos e educacionais.
+
