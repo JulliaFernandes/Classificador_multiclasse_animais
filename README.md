@@ -96,7 +96,7 @@ O projeto compara as abordagens em termos de desempenho de classificação, util
 
 - **Disciplina**: Visão Computacional  
 - **Instituição**: CEFET-MG  
-- **Professor**: Diego Ascânio Santos  
+- **Professor**: Thabatta Araújo 
 - **Ano/Semestre**: 2024/1
 
 ---
